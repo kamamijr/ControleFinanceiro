@@ -43,6 +43,16 @@ class ControleFinanceiro:
             })
             return df_despesas
     
+    
+    def criar_df_receita(self):
+            # Criação de um DataFrame a partir das despesas
+            df_receitas = pd.DataFrame({
+                'Origem': [receita.origem for receita in self.receitas],
+                'Valor': [receita.valor for receita in self.receitas],
+                'Data': [receita.data for receita in self.receitas]
+            })
+            return df_receitas
+    
     def gerar_relatorio(self):
         # Gerar relatório com gráficos, se necessário
         pass
